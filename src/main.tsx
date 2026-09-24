@@ -3,6 +3,10 @@ import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import "./style.css";
 import "./layouts.css";
+try {
+  localStorage.removeItem("build-interval-settings");
+  localStorage.removeItem("build-interval-run");
+} catch {}
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />

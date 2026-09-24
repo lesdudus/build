@@ -109,6 +109,22 @@ test("MOCK API: password errors, private assigned programs, queued reconnect syn
   await page.goto("/");
   await login(page, "first@example.test", true);
   expect(await page.evaluate(owner => JSON.parse(localStorage.getItem(`build-program-${owner}`)!).warmup, active.id)).toBe('Private warmup for first@example.test');
+  const timerWrites: string[] = [];
+  const watchTimerWrites = (request: import('@playwright/test').Request) => {
+    if (request.url().includes('/rest/v1/') && !['GET', 'OPTIONS'].includes(request.method())) timerWrites.push(request.url());
+  };
+  page.on('request', watchTimerWrites);
+  await page.getByRole('button', { name: 'Timer', exact: true }).click();
+  await page.getByRole('button', { name: 'Start timer', exact: true }).click();
+  await page.getByRole('button', { name: 'Pause', exact: true }).click();
+  page.once('dialog', dialog => dialog.accept());
+  await page.getByRole('button', { name: 'End timer', exact: true }).click();
+  await expect(page.getByRole('dialog', { name: 'Active interval timer' })).not.toBeVisible();
+  page.off('request', watchTimerWrites);
+  expect(timerWrites).toEqual([]);
+  expect(rows.size).toBe(0);
+  expect(operations.size).toBe(0);
+  await page.getByRole('button', { name: 'Train', exact: true }).click();
   await page.getByRole("button", { name: "Start Day 1", exact: true }).click();
   await expect(page.locator(".header-status")).toContainText("Synced");
   disconnected = true;

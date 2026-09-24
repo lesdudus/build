@@ -539,9 +539,7 @@ async function setIntervals(
   rest: string,
   sets: string,
 ) {
-  await page.getByLabel("Exercise minutes", { exact: true }).fill("0");
   await page.getByLabel("Exercise seconds", { exact: true }).fill(exercise);
-  await page.getByLabel("Rest minutes", { exact: true }).fill("0");
   await page.getByLabel("Rest seconds", { exact: true }).fill(rest);
   await page.getByLabel("Number of sets", { exact: true }).fill(sets);
 }
@@ -577,6 +575,15 @@ test("interval timer alternates automatically, pauses precisely and never logs r
     );
   const workoutBefore = await workoutSnapshot();
   await page.getByRole("button", { name: "Timer", exact: true }).click();
+  await page.evaluate(() => {
+    const writes: string[] = [];
+    (window as any).timerStorageWrites = writes;
+    const original = Storage.prototype.setItem;
+    Storage.prototype.setItem = function (key, value) {
+      writes.push(key);
+      return original.call(this, key, value);
+    };
+  });
   await setIntervals(page, "4", "2", "2");
   await expect(page.getByLabel("Total planned duration")).toHaveText("0:15");
   await page.getByRole("button", { name: "Start timer", exact: true }).click();
@@ -615,19 +622,54 @@ test("interval timer alternates automatically, pauses precisely and never logs r
     page.getByRole("timer", { name: "Rest timer", exact: true }),
   ).toBeVisible();
   expect(await workoutSnapshot()).toBe(workoutBefore);
+  expect(await page.evaluate(() => (window as any).timerStorageWrites)).toEqual(
+    [],
+  );
 });
 
-test("interval timer has phone fullscreen fallback, zero-rest recovery and offline operation", async ({
+test("interval timer has seconds-only fields, fullscreen fallback and memory-only offline operation", async ({
   page,
   context,
 }) => {
   test.setTimeout(90000);
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
+  await page.addInitScript(() => {
+    const settings = { exercise: 90, rest: 30, sets: 7 };
+    localStorage.setItem("build-interval-settings", JSON.stringify(settings));
+    localStorage.setItem(
+      "build-interval-run",
+      JSON.stringify({ version: 1, settings, elapsed: 6000, startedAt: null }),
+    );
+    localStorage.setItem("timer-test-unrelated", "keep");
+  });
   await page.clock.install({ time: new Date("2026-09-24T12:00:00Z") });
   await page.clock.pauseAt(new Date("2026-09-24T12:00:01Z"));
   await page.setViewportSize({ width: 390, height: 844 });
   await openIntervalTimer(page);
+  await expect(
+    page.getByLabel("Exercise seconds", { exact: true }),
+  ).toHaveValue("45");
+  await expect(page.getByLabel("Rest seconds", { exact: true })).toHaveValue(
+    "20",
+  );
+  await expect(page.getByLabel("Number of sets", { exact: true })).toHaveValue(
+    "3",
+  );
+  await expect(page.getByLabel("Total planned duration")).toHaveText("3:00");
+  await expect(page.getByLabel(/minutes/i)).toHaveCount(0);
+  expect(
+    await page.evaluate(() => ({
+      settings: localStorage.getItem("build-interval-settings"),
+      run: localStorage.getItem("build-interval-run"),
+      unrelated: localStorage.getItem("timer-test-unrelated"),
+    })),
+  ).toEqual({ settings: null, run: null, unrelated: "keep" });
+  await setIntervals(page, "90", "120", "2");
+  await expect(page.getByLabel("Total planned duration")).toHaveText("5:05");
+  await expect(
+    page.getByRole("button", { name: "Start timer", exact: true }),
+  ).toBeEnabled();
   for (const layout of layouts) {
     await page
       .getByRole("combobox", { name: "Layout theme" })
@@ -712,13 +754,22 @@ test("interval timer has phone fullscreen fallback, zero-rest recovery and offli
   await page.getByRole("button", { name: "Timer", exact: true }).click();
   await expect(
     page.getByRole("region", { name: "Interrupted timer" }),
-  ).toContainText("0:09");
+  ).toHaveCount(0);
   await expect(modal).not.toBeVisible();
-  await page.clock.fastForward(60000);
   await expect(
-    page.getByRole("region", { name: "Interrupted timer" }),
-  ).toContainText("0:09");
-  await page.getByRole("button", { name: "Resume timer", exact: true }).click();
+    page.getByLabel("Exercise seconds", { exact: true }),
+  ).toHaveValue("45");
+  await expect(page.getByLabel("Rest seconds", { exact: true })).toHaveValue(
+    "20",
+  );
+  await expect(page.getByLabel("Number of sets", { exact: true })).toHaveValue(
+    "3",
+  );
+  await page.clock.fastForward(60000);
+  await expect(modal).not.toBeVisible();
+  await setIntervals(page, "10", "0", "2");
+  await page.getByRole("button", { name: "Start timer", exact: true }).click();
+  await page.clock.fastForward(6000);
   await expect(
     page.getByRole("timer", { name: "Interval countdown" }),
   ).toHaveText("0:09");

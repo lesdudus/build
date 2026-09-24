@@ -1,15 +1,30 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
+  defaultIntervals,
   intervalError,
   intervalTotal,
   intervalPhase,
   startIntervals,
   pauseIntervals,
   resumeIntervals,
-  parseIntervalRun,
   formatIntervalTime,
 } from "../src/interval.ts";
+
+test("defaults are 45 seconds exercise, 20 seconds rest and three sets; durations accept total seconds", () => {
+  assert.deepEqual(defaultIntervals, { exercise: 45, rest: 20, sets: 3 });
+  assert.equal(intervalTotal(defaultIntervals), 180);
+  assert.equal(intervalError({ exercise: 90, rest: 120, sets: 3 }), "");
+  assert.equal(intervalError({ exercise: 3600, rest: 3600, sets: 1 }), "");
+  assert.match(
+    intervalError({ exercise: 3601, rest: 20, sets: 3 }),
+    /3600 seconds/,
+  );
+  assert.match(
+    intervalError({ exercise: 45, rest: 3601, sets: 3 }),
+    /3600 seconds/,
+  );
+});
 
 test("interval timing uses elapsed time, catches up across phases, and has no final rest", () => {
   const run = startIntervals({ exercise: 20, rest: 10, sets: 3 }, 1000);
@@ -49,7 +64,7 @@ test("zero rest transitions straight to exercise and a single set ends immediate
   assert.equal(intervalTotal(single.settings), 7);
   assert.equal(intervalPhase(single, 7000).phase, "finished");
 });
-test("invalid settings and corrupt recovery are rejected; recovery is always paused", () => {
+test("invalid settings are rejected and countdown formatting remains readable", () => {
   for (const settings of [
     { exercise: 0, rest: 1, sets: 1 },
     { exercise: 10, rest: -1, sets: 1 },
@@ -58,16 +73,5 @@ test("invalid settings and corrupt recovery are rejected; recovery is always pau
   ])
     assert.ok(intervalError(settings));
   assert.throws(() => startIntervals({ exercise: 0, rest: 0, sets: 1 }, 0));
-  assert.equal(parseIntervalRun("bad"), null);
-  assert.equal(parseIntervalRun('{"version":1}'), null);
-  const paused = pauseIntervals(
-    startIntervals({ exercise: 10, rest: 0, sets: 1 }, 0),
-    6000,
-  );
-  const recovered = parseIntervalRun(
-    JSON.stringify({ ...paused, startedAt: 4000 }),
-  )!;
-  assert.equal(recovered.startedAt, null);
-  assert.equal(intervalPhase(recovered, 99999999).remaining, 9);
   assert.equal(formatIntervalTime(3661), "1:01:01");
 });

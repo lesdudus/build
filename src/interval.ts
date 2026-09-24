@@ -7,26 +7,23 @@ export type IntervalRun = {
 };
 export const preparationSeconds = 5;
 export const defaultIntervals: IntervalSettings = {
-  exercise: 40,
+  exercise: 45,
   rest: 20,
   sets: 3,
 };
-export const intervalSettingsKey = "build-interval-settings";
-export const intervalRunKey = "build-interval-run";
-
 export function intervalError(settings: IntervalSettings) {
   if (
     !Number.isInteger(settings.exercise) ||
     settings.exercise < 1 ||
     settings.exercise > 3600
   )
-    return "Exercise duration must be between 1 second and 60 minutes.";
+    return "Exercise duration must be between 1 and 3600 seconds.";
   if (
     !Number.isInteger(settings.rest) ||
     settings.rest < 0 ||
     settings.rest > 3600
   )
-    return "Rest duration must be between 0 and 60 minutes.";
+    return "Rest duration must be between 0 and 3600 seconds.";
   if (
     !Number.isInteger(settings.sets) ||
     settings.sets < 1 ||
@@ -117,27 +114,4 @@ export function formatIntervalTime(seconds: number) {
   return hours
     ? `${hours}:${String(minutes).padStart(2, "0")}:${remainder}`
     : `${minutes}:${remainder}`;
-}
-export function parseIntervalRun(value: string | null): IntervalRun | null {
-  try {
-    const run = JSON.parse(value || "null") as IntervalRun | null;
-    if (
-      !run ||
-      run.version !== 1 ||
-      !run.settings ||
-      intervalError(run.settings) ||
-      !Number.isFinite(run.elapsed) ||
-      run.elapsed < 0 ||
-      run.elapsed >= intervalTotal(run.settings) * 1000
-    )
-      return null;
-    return {
-      version: 1,
-      settings: run.settings,
-      elapsed: run.elapsed,
-      startedAt: null,
-    };
-  } catch {
-    return null;
-  }
 }
