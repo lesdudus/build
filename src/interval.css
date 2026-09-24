@@ -1,0 +1,359 @@
+.interval-section[hidden] {
+  display: none;
+}
+.interval-section {
+  max-width: 960px;
+  margin: auto;
+}
+.interval-setup {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 48px;
+  border-top: 1px solid var(--cp-border);
+  padding-top: 28px;
+}
+.interval-fields {
+  display: grid;
+  gap: 24px;
+}
+.interval-fields fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.interval-fields legend {
+  font-weight: 650;
+  margin-bottom: 12px;
+  padding: 0;
+}
+.interval-duration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.interval-fields input {
+  font:
+    600 24px Consolas,
+    monospace;
+  min-height: 60px;
+}
+.interval-set-count {
+  max-width: 160px;
+}
+.interval-plan {
+  padding: 20px 0 20px 36px;
+  border-left: 1px solid var(--cp-border);
+  align-self: stretch;
+}
+.interval-plan strong {
+  display: block;
+  font:
+    600 48px/1.2 Consolas,
+    monospace;
+  margin: 14px 0;
+}
+.interval-plan p {
+  font-size: 13px;
+}
+.interval-plan button {
+  margin-top: 28px;
+  min-height: 56px;
+  width: 100%;
+}
+.interval-validation {
+  grid-column: 1 / -1;
+  color: var(--cp-danger);
+}
+.interval-recovery {
+  border-block: 1px solid var(--cp-border);
+  padding: 28px 0;
+}
+.interval-recovery h2 {
+  margin-bottom: 16px;
+}
+.interval-recovery .button-row {
+  margin-top: 24px;
+}
+dialog.interval-immersive {
+  --interval-color: var(--cp-link);
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  height: 100dvh;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--cp-surface);
+  color: var(--cp-text);
+  overflow: auto;
+}
+.interval-immersive[data-phase="rest"] {
+  --interval-color: var(--cp-success);
+}
+.interval-immersive[data-phase="finished"] {
+  --interval-color: var(--cp-success);
+}
+.interval-immersive[data-phase="prepare"] {
+  --interval-color: var(--cp-text-soft);
+}
+.interval-immersive::backdrop {
+  background: var(--cp-surface);
+}
+.interval-screen {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  padding: max(16px, env(safe-area-inset-top))
+    max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom))
+    max(20px, env(safe-area-inset-left));
+  background: radial-gradient(
+    ellipse at center,
+    var(--cp-surface) 25%,
+    var(--cp-surface-soft)
+  );
+}
+.interval-screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.interval-screen:fullscreen {
+  width: 100%;
+  height: 100dvh;
+  overflow: auto;
+}
+.interval-screen-header .eyebrow {
+  margin: 0;
+  color: var(--cp-text-soft);
+}
+.interval-screen-header > div {
+  display: flex;
+  gap: 8px;
+}
+.interval-screen-header button {
+  border: 0;
+  background: var(--cp-surface-soft);
+}
+.interval-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  min-width: 0;
+}
+.interval-set {
+  font:
+    600 22px/1.4 Consolas,
+    monospace;
+}
+.interval-set span {
+  color: var(--cp-text-soft);
+}
+.interval-dial {
+  position: relative;
+  width: min(100%, 380px, 48dvh);
+  aspect-ratio: 1;
+  flex: none;
+}
+.interval-dial svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.interval-dial circle {
+  fill: none;
+  stroke-width: 7;
+}
+.interval-ring-track {
+  stroke: var(--cp-border);
+}
+.interval-ring-fill {
+  stroke: var(--interval-color);
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+.interval-digits {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.interval-phase {
+  font-size: 18px;
+  font-weight: 650;
+  text-transform: uppercase;
+  color: var(--cp-text);
+}
+.interval-digits strong {
+  font:
+    650 64px/1.1 Consolas,
+    monospace;
+  font-variant-numeric: tabular-nums;
+}
+.interval-digits strong > svg {
+  width: 76px;
+  height: 76px;
+  color: var(--interval-color);
+}
+.interval-digits small {
+  color: var(--cp-text-soft);
+  font-size: 13px;
+}
+.interval-next {
+  font-size: 16px;
+  color: var(--cp-text-soft);
+}
+.interval-next b {
+  display: block;
+  color: var(--cp-text);
+  font-weight: 600;
+}
+.interval-total {
+  font-size: 12px;
+  color: var(--cp-text-soft);
+  margin: 0;
+}
+.interval-screen-footer {
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+}
+.interval-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+.interval-controls .icon-button {
+  width: 52px;
+  height: 52px;
+}
+.interval-pause {
+  min-height: 64px;
+  min-width: 144px;
+  font-size: 20px;
+  background: var(--cp-text);
+  color: var(--cp-surface);
+  border-color: var(--cp-text);
+}
+.interval-pause:hover:not(:disabled) {
+  background: var(--cp-text-muted);
+  color: var(--cp-surface);
+}
+.interval-screen-footer > small {
+  color: var(--cp-text-soft);
+  font-size: 11px;
+}
+@media (max-width: 760px) {
+  .main-nav {
+    gap: 0;
+    padding-inline: 8px;
+  }
+  .main-nav button {
+    flex: 1;
+    min-width: 0;
+    padding-inline: 5px;
+  }
+  .interval-setup {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 20px;
+  }
+  .interval-plan {
+    border-left: 0;
+    border-top: 1px solid var(--cp-border);
+    padding: 20px 0 0;
+  }
+  .interval-plan strong {
+    font-size: 40px;
+  }
+  .interval-duration {
+    gap: 12px;
+  }
+  .interval-fields {
+    gap: 20px;
+  }
+}
+@media (max-height: 660px) {
+  .interval-screen {
+    gap: 8px;
+    padding-block: 10px;
+  }
+  .interval-center {
+    gap: 8px;
+  }
+  .interval-dial {
+    width: min(100%, 300px, 42dvh);
+  }
+  .interval-digits strong {
+    font-size: 48px;
+  }
+  .interval-phase {
+    font-size: 14px;
+  }
+  .interval-screen-footer {
+    gap: 8px;
+  }
+  .interval-pause {
+    min-height: 52px;
+  }
+}
+@media (orientation: landscape) and (max-height: 550px) {
+  .interval-screen {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    grid-template-rows: auto 1fr;
+  }
+  .interval-screen-header {
+    grid-column: 1 / -1;
+  }
+  .interval-center {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+  }
+  .interval-dial {
+    grid-column: 1;
+    grid-row: 1 / 5;
+    width: min(100%, 65dvh);
+  }
+  .interval-set,
+  .interval-next,
+  .interval-total {
+    grid-column: 2;
+  }
+  .interval-controls {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .interval-pause {
+    min-width: 120px;
+  }
+  .interval-screen-footer {
+    align-content: center;
+  }
+  .interval-controls .icon-button {
+    width: 44px;
+    height: 44px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .interval-immersive * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,451 @@
+{
+  "version": "2026-09-24 / Foundation template",
+  "profile": "Conservative foundation template. Individual history and assigned programs belong to the signed-in account. This template is not medical clearance.",
+  "warmup": "Five minutes easy bike or treadmill, then 2-3 progressively heavier, easy practice sets for the first leg exercise and one easy set before each new movement as needed. About 10-13 minutes total. Warm-ups do not count as working sets. Do not use rowing or an arm-driven bike if it provokes the shoulder.",
+  "days": [
+    {
+      "id": "day-1",
+      "name": "Day 1",
+      "title": "Lay the foundation",
+      "subtitle": "Legs, comfortable rowing and floor-based core.",
+      "minutes": "40-50 min now; +6-8 min when pressing is cleared",
+      "exercises": [
+        {
+          "name": "Leg press",
+          "sets": 3,
+          "reps": "8-12",
+          "rir": "3",
+          "rest": 120,
+          "group": "Quads",
+          "status": "Ready",
+          "cue": "Keep pelvis supported; knees follow toes. Use comfortable depth without the lower back rolling up. Do not pull hard on the handles.",
+          "start": "Select a light load on your actual machine after easy warm-ups, leaving the prescribed reps in reserve. Machine loads are not interchangeable.",
+          "swap": "Belt squat if setup does not load the shoulder; otherwise bodyweight sit-to-stand with arms relaxed."
+        },
+        {
+          "name": "Australian row / Aussies",
+          "sets": 2,
+          "reps": "8-12",
+          "rir": "3-4",
+          "rest": 90,
+          "group": "Horizontal pull",
+          "status": "Pain-free only",
+          "cue": "Use an easy, reproducible upright angle. Keep neck relaxed and pull without jerking or forcing the shoulder back. Skip if there is any shoulder pain.",
+          "start": "Begin with two easy sets at a reproducible upright angle. No added load or harder angle while a shoulder restriction remains unresolved.",
+          "swap": "Only a previously comfortable, light chest-supported neutral-grip row. Otherwise omit; do not replace with pulldowns."
+        },
+        {
+          "name": "Seated leg curl",
+          "sets": 2,
+          "reps": "10-15",
+          "rir": "3",
+          "rest": 90,
+          "group": "Hamstrings",
+          "status": "Ready",
+          "cue": "Align the knee with the machine pivot. Keep hips settled and lower the pad under control.",
+          "start": "Choose a light setting on your actual machine and adjust to the prescribed effort. Do not transfer numbers from another machine.",
+          "swap": "Lying leg curl if getting into position and the arm supports are comfortable."
+        },
+        {
+          "name": "Neutral-grip machine chest press",
+          "sets": 2,
+          "reps": "8-12",
+          "rir": "3-4",
+          "rest": 120,
+          "group": "Chest",
+          "status": "Hold for assessment",
+          "cue": "NOT ACTIVE NOW. After clinician clearance, choose a comfortable grip and range; do not force elbows behind the body. Stop with pain.",
+          "start": "No prescribed load while painful pressing is unexplained. After clearance, use a very light machine setting for the lower end of the range with 3-4 reps left; recheck the next-day response.",
+          "swap": "A clinician-approved pain-free horizontal press, or omit. Push-ups and overhead presses are not substitutes now."
+        },
+        {
+          "name": "Seated calf raise",
+          "sets": 2,
+          "reps": "10-15",
+          "rir": "2-3",
+          "rest": 60,
+          "group": "Calves",
+          "status": "Ready",
+          "cue": "Use a seated machine with a thigh pad, not shoulder pads. Move through a comfortable ankle range with no bouncing.",
+          "start": "Select a light load permitting at least 10 controlled reps with 2-3 more available.",
+          "swap": "Seated bodyweight heel raises; increase controlled reps rather than balancing weight with the sore arm."
+        },
+        {
+          "name": "Supine heel taps",
+          "sets": 2,
+          "reps": "6-10 / side",
+          "rir": "3 clean reps",
+          "rest": 60,
+          "group": "Core",
+          "status": "Ready",
+          "cue": "Lie on your back, arms relaxed at your sides. With knees bent, lower one heel at a time without arching your back. Count each side separately.",
+          "start": "Bodyweight. Shorten the leg movement if you cannot keep your trunk quiet. No overhead arm position.",
+          "swap": "Supine alternating heel slides with arms relaxed; use the same controlled reps."
+        }
+      ]
+    },
+    {
+      "id": "day-2",
+      "name": "Day 2",
+      "title": "Build control",
+      "subtitle": "A second leg pattern, hip extension and easy upper-body work.",
+      "minutes": "45-55 min including warm-up",
+      "exercises": [
+        {
+          "name": "Belt squat",
+          "sets": 3,
+          "reps": "8-12",
+          "rir": "3",
+          "rest": 120,
+          "group": "Quads",
+          "status": "Ready",
+          "cue": "Use the hip belt, not a bar or shoulder pads. Keep feet planted and knees tracking comfortably. Ask gym staff to demonstrate setup.",
+          "start": "This is a new exercise: start at the lightest practical setting and add small amounts during warm-up. No transfer of leg-press numbers.",
+          "swap": "Leg press at the same 8-12 rep target; if neither is comfortable, bodyweight sit-to-stand."
+        },
+        {
+          "name": "Australian row / Aussies",
+          "sets": 2,
+          "reps": "8-12",
+          "rir": "3-4",
+          "rest": 90,
+          "group": "Horizontal pull",
+          "status": "Pain-free only",
+          "cue": "Repeat the comfortable Day 1 angle. Keep ribs and pelvis together; no shrugging or pulling through shoulder discomfort.",
+          "start": "Begin with two easy sets at a reproducible upright angle. No added load or harder angle while a shoulder restriction remains unresolved.",
+          "swap": "Previously comfortable light chest-supported neutral row, or omit."
+        },
+        {
+          "name": "Floor glute bridge",
+          "sets": 3,
+          "reps": "10-15",
+          "rir": "3",
+          "rest": 90,
+          "group": "Glutes",
+          "status": "Ready",
+          "cue": "Feet flat, ribs down, arms relaxed. Raise the hips without arching the lower back or pushing through your arms. No bench edge under the sore shoulder.",
+          "start": "Bodyweight first. If 15 is very easy, pause briefly at the top; add a small padded load over the hips only if setup requires no painful arm effort, with staff assistance if needed.",
+          "swap": "A hip-belt glute-drive machine only if its back support is comfortable; otherwise omit if shoulder contact hurts."
+        },
+        {
+          "name": "Supported neutral-grip curl",
+          "sets": 2,
+          "reps": "10-15",
+          "rir": "3-4",
+          "rest": 75,
+          "group": "Biceps",
+          "status": "Pain-free only",
+          "cue": "Seated with back supported, elbows still beside the body. Curl without swinging or lifting the upper arm. Any shoulder pain means stop.",
+          "start": "Choose light dumbbells with upright back support and adjust to the effort target. Omit if a light trial is uncomfortable.",
+          "swap": "Comfortable light cable curl with elbows at the sides, or omit. No incline curls with the arm stretched behind you."
+        },
+        {
+          "name": "Seated calf raise",
+          "sets": 2,
+          "reps": "10-15",
+          "rir": "2-3",
+          "rest": 60,
+          "group": "Calves",
+          "status": "Ready",
+          "cue": "Repeat Day 1 with a thigh pad; lower slowly and avoid bouncing.",
+          "start": "Repeat the first successful Day 1 load; progress only after the rep rule is met.",
+          "swap": "Seated bodyweight heel raises."
+        },
+        {
+          "name": "Reverse crunch",
+          "sets": 2,
+          "reps": "8-12",
+          "rir": "3 clean reps",
+          "rest": 60,
+          "group": "Core",
+          "status": "Ready",
+          "cue": "Arms relaxed on the floor. Exhale and gently roll the pelvis toward the ribs; a small controlled lift is enough. No gripping a bench or swinging.",
+          "start": "Bodyweight. Stop before momentum or back arching takes over.",
+          "swap": "Supine heel taps or heel slides, 6-10 reps per side."
+        }
+      ]
+    },
+    {
+      "id": "day-3",
+      "name": "Day 3",
+      "title": "Repeat with intent",
+      "subtitle": "Practice the same lifts, build the log, leave something in reserve.",
+      "minutes": "40-50 min now; +6-8 min when pressing is cleared",
+      "exercises": [
+        {
+          "name": "Leg press",
+          "sets": 3,
+          "reps": "8-12",
+          "rir": "3",
+          "rest": 120,
+          "group": "Quads",
+          "status": "Ready",
+          "cue": "Use the same machine, seat and range as Day 1. The aim is repeatable clean reps, not a different number on a different machine.",
+          "start": "Select a light load on your actual machine after easy warm-ups, leaving the prescribed reps in reserve. Machine loads are not interchangeable.",
+          "swap": "Belt squat or bodyweight sit-to-stand if shoulder-free setup requires it."
+        },
+        {
+          "name": "Australian row / Aussies",
+          "sets": 2,
+          "reps": "8-12",
+          "rir": "3-4",
+          "rest": 90,
+          "group": "Horizontal pull",
+          "status": "Pain-free only",
+          "cue": "Same easy angle, controlled movement, no pain. You do not need to exhaust your back to make this session count.",
+          "start": "Begin with two easy sets at a reproducible upright angle. No added load or harder angle while a shoulder restriction remains unresolved.",
+          "swap": "Previously comfortable light chest-supported neutral row, or omit."
+        },
+        {
+          "name": "Seated leg curl",
+          "sets": 3,
+          "reps": "10-15",
+          "rir": "3",
+          "rest": 90,
+          "group": "Hamstrings",
+          "status": "Ready",
+          "cue": "Repeat the Day 1 machine and settings. Keep hips against the pad and avoid rushing the last few reps.",
+          "start": "Choose a light setting on your actual machine and adjust to the prescribed effort. Do not transfer numbers from another machine.",
+          "swap": "Lying leg curl with comfortable setup and arm position."
+        },
+        {
+          "name": "Neutral-grip machine chest press",
+          "sets": 2,
+          "reps": "8-12",
+          "rir": "3-4",
+          "rest": 120,
+          "group": "Chest",
+          "status": "Hold for assessment",
+          "cue": "NOT ACTIVE NOW. Reserved for a gradual, clinician-cleared return to horizontal pressing. No pain during, after or the next morning.",
+          "start": "After assessment, start with one light working set on Day 1 only. Add the second set and then this Day 3 slot only across symptom-free exposures, following clinician advice.",
+          "swap": "Clinician-approved pain-free horizontal press, or omit."
+        },
+        {
+          "name": "Rope triceps pressdown",
+          "sets": 2,
+          "reps": "10-15",
+          "rir": "3-4",
+          "rest": 75,
+          "group": "Triceps",
+          "status": "Pain-free only",
+          "cue": "Keep elbows beside the body and shoulders relaxed. Do not lean heavily on the cable or pull the upper arm behind you.",
+          "start": "Start with a very light cable setting to assess comfort. Loads from different cable or triceps machines are not interchangeable.",
+          "swap": "A light supported triceps machine only if already comfortable, otherwise omit; no dips or overhead extensions."
+        },
+        {
+          "name": "Supine heel taps",
+          "sets": 2,
+          "reps": "6-10 / side",
+          "rir": "3 clean reps",
+          "rest": 60,
+          "group": "Core",
+          "status": "Ready",
+          "cue": "Arms relaxed at your sides. Alternate legs with a steady trunk; stop before you lose the position.",
+          "start": "Bodyweight. Add a rep per side only while every rep looks the same.",
+          "swap": "Reverse crunch for 8-12 controlled reps, or heel slides."
+        }
+      ]
+    },
+    {
+      "id": "day-4",
+      "name": "Day 4",
+      "title": "Extra is optional",
+      "subtitle": "An occasional easy visit, not another lifting day.",
+      "minutes": "15-25 min total; zero required working sets",
+      "exercises": [
+        {
+          "name": "Easy bike or walk",
+          "sets": 0,
+          "reps": "5 + 10-20 min",
+          "rir": "Talk comfortably",
+          "rest": 0,
+          "group": "Cardio",
+          "status": "Optional",
+          "cue": "First five minutes very easy, then an optional 10-20 at a conversational pace. Finish feeling able to do more. No intervals or upper-body ergometer.",
+          "start": "Use only occasionally when you feel recovered and have time. Skip freely; no weekly quota and no missed-session debt.",
+          "swap": "A relaxed outdoor walk. If legs are sore enough to change your gait, rest instead."
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "section": "schedule",
+      "title": "One full rest day is the default",
+      "text": "Aim for roughly 48 hours between core sessions: Monday Day 1, Wednesday Day 2, Friday or Saturday Day 3. Then continue Day 1. This is a practical recovery default, not a biological deadline."
+    },
+    {
+      "section": "schedule",
+      "title": "Consecutive availability is not an obligation",
+      "text": "If you train Monday and can visit Tuesday, make Tuesday rest or the optional easy Day 4, not the next full lifting session. Wednesday is Day 2. Avoid squeezing all three core days into consecutive days."
+    },
+    {
+      "section": "schedule",
+      "title": "Miss a day? Keep your place",
+      "text": "If the week becomes Monday and Saturday only, do Day 1 then Day 2; the next visit is Day 3. Do not restart every Monday, double sessions, or add catch-up sets. Consistency over several weeks matters more than a calendar score."
+    },
+    {
+      "section": "schedule",
+      "title": "Extra cardio has a specific job",
+      "text": "An occasional easy 10-20 minutes after a core session or on Day 4 can support conditioning without much extra fatigue. Do not add both by default. It is optional gym work, not a complete cardiovascular-health plan: adult guidance is 150-300 minutes moderate or 75-150 vigorous aerobic activity weekly, or a combination. Walking and transport count."
+    },
+    {
+      "section": "safety",
+      "title": "Get the shoulder assessed",
+      "text": "Pain in both pushing and overhead pulling warrants a physiotherapist or sports-medicine review before rebuilding those patterns. I cannot diagnose it remotely. Arrange review particularly if symptoms persist for two weeks, worsen, or disturb normal movement or sleep. This is not a rotator-cuff rehab prescription."
+    },
+    {
+      "section": "safety",
+      "title": "Pain-free means during and after",
+      "text": "All exercises, including Aussies and lower-body machine setup, must be comfortable during the session and must not increase shoulder symptoms later or the next morning. Stop the provoking exercise; do not push through, shorten the rest to rush past it, or mask pain to train. If symptoms increase, omit that movement and seek clinical guidance. Normal muscle effort is different from joint pain."
+    },
+    {
+      "section": "safety",
+      "title": "What is deliberately on hold",
+      "text": "This conservative template excludes pull-ups, push-ups, overhead presses, pulldowns, hangs and negatives. Chest-press slots remain held. Easy rows are conditional on pain-free movement and recovery. Clinician advice takes precedence."
+    },
+    {
+      "section": "safety",
+      "title": "When not to wait",
+      "text": "Seek urgent medical care for sudden severe pain, pain after significant injury, inability to move the arm, new marked weakness, deformity, major swelling, persistent numbness or tingling, or fever/unwellness. Shoulder or arm pain with chest pain or breathlessness needs emergency assessment. Do not exercise through these signs."
+    },
+    {
+      "section": "progression",
+      "title": "Start below your capacity",
+      "text": "First rotation: cap every active exercise at two working sets and leave 3-4 clean reps in reserve. Then use the listed sets if you recover well. RIR means reps in reserve: your estimate of extra technically sound reps, not extra painful reps. Do not test failure to calibrate it. Upper-body work stays easy while symptoms are unresolved."
+    },
+    {
+      "section": "progression",
+      "title": "Reps first, load second",
+      "text": "For non-painful lower-body lifts, keep the same load until all sets reach the top of the range with the stated RIR and consistent technique on two appearances. Then use the smallest practical increase (usually about 2-5%) and return to the bottom of the range. If the machine jump is too large, keep the load and improve control; do not force a jump. For a newly cleared upper-body lift, clinician advice overrides this rule."
+    },
+    {
+      "section": "progression",
+      "title": "Rest is part of the prescription",
+      "text": "Use the listed rest between sets, including the last set before moving to a demanding lift. Add 30-60 seconds if breathing or technique has not recovered. No supersets are required. For core, stop about three clean reps before loss of position; left plus right is one paired set, not double the set count."
+    },
+    {
+      "section": "progression",
+      "title": "Record what actually happened",
+      "text": "Record each set separately: date, exercise, set type, status, machine/settings, load basis, actual load, reps or seconds, RIR and symptoms. Keep targets separate from actual results. Missing values are not zero."
+    },
+    {
+      "section": "progression",
+      "title": "A stall is information",
+      "text": "If a lift makes no rep progress across three appearances, first check the same equipment, range, rest, sleep and honest RIR. Reduce load by about 5-10% and rebuild if needed. Do not add volume automatically. After two complete rotations, review comfort, actual duration and performance; revise the program then, not every visit."
+    },
+    {
+      "section": "progression",
+      "title": "Adjust for recovery, not guilt",
+      "text": "Mild muscle soreness with normal movement: repeat or reduce the load. If sore enough to alter technique, unusually fatigued, or after poor sleep: postpone or remove one working set per exercise and use 4 RIR. If poor recovery persists, use a lighter rotation with roughly half the sets and seek help if unexplained. After a break longer than about a week, use the introductory two-set cap again and reselect comfortable loads."
+    },
+    {
+      "section": "pullup",
+      "title": "Now: repeat pain-free rows",
+      "text": "On eligible days, use 2 x 8-12 easy Aussies at 3-4 RIR with a consistent angle and no symptom increase later or next morning. No harder angle or added load while the shoulder is unresolved. This maintains horizontal pulling; it is not a validated readiness test for pull-ups."
+    },
+    {
+      "section": "pullup",
+      "title": "After assessment: earn vertical work",
+      "text": "Only when your clinician supports return to overhead pulling, try light neutral-grip pulldowns in a comfortable range. Start with 1-2 x 10-12 at 3-4 RIR on Days 1 and 3, REPLACING the row sets rather than adding more. Require at least two symptom-free exposures before a small progression. Recalculate the rotation volume when this phase starts."
+    },
+    {
+      "section": "pullup",
+      "title": "Then: feet-assisted practice",
+      "text": "After comfortable vertical work and clinician agreement, use a stable low bar with feet on the floor or a secure gym platform, with staff help for setup. No improvised furniture. Start 2 x 5-8 at 3 RIR on Days 1 and 3, replacing pulldowns. Record setup and assistance; gradually use less leg help. Bands are optional only with safe setup, not assumed available."
+    },
+    {
+      "section": "pullup",
+      "title": "Finally: one controlled attempt",
+      "text": "Two symptom-free sessions of 2 x 8 feet-assisted reps with minimal leg help are a coaching checkpoint, not proof you can pull up. Once full-range overhead loading is comfortable and your clinician agrees, attempt one strict rep while fresh, resting 2-3 minutes first. No kipping, painful grinding or repeated failures. Stop on pain; otherwise return to assistance if the rep is not there. No promised deadline."
+    }
+  ],
+  "volume": [
+    {
+      "name": "Quadriceps",
+      "sets": "9",
+      "exposure": "3 days",
+      "extra": "0",
+      "group": "Quads"
+    },
+    {
+      "name": "Hamstrings",
+      "sets": "5",
+      "exposure": "2 days",
+      "extra": "0",
+      "group": "Hamstrings"
+    },
+    {
+      "name": "Glutes",
+      "sets": "3 bridges + squat/press involvement",
+      "exposure": "3 days including compounds",
+      "extra": "0",
+      "group": "Glutes"
+    },
+    {
+      "name": "Horizontal pull / back",
+      "sets": "Up to 6, only if pain-free",
+      "exposure": "Up to 3 days",
+      "extra": "0",
+      "group": "Horizontal pull"
+    },
+    {
+      "name": "Chest / horizontal press",
+      "sets": "0 now; 4 reserved after clearance",
+      "exposure": "0 now; later 2 days",
+      "extra": "0",
+      "group": "Chest"
+    },
+    {
+      "name": "Vertical pull / direct shoulders",
+      "sets": "0; deferred",
+      "exposure": "Not loaded now",
+      "extra": "0",
+      "group": "Deferred"
+    },
+    {
+      "name": "Direct biceps / triceps",
+      "sets": "Up to 2 / 2, only if pain-free",
+      "exposure": "1 day each",
+      "extra": "0",
+      "group": "Arms"
+    },
+    {
+      "name": "Calves",
+      "sets": "4",
+      "exposure": "2 days",
+      "extra": "0",
+      "group": "Calves"
+    },
+    {
+      "name": "Core",
+      "sets": "6",
+      "exposure": "3 days",
+      "extra": "0",
+      "group": "Core"
+    }
+  ],
+  "volumeNote": "Listed working sets exclude warm-ups and held pressing. There are 27 lower-body/core sets plus up to 10 conditional row/arm sets = 37 per full rotation. The introductory rotation is lower. Compound work can stimulate multiple muscles, but indirect arm work is not counted as direct arm sets and bridges are not counted as direct hamstring sets. Bilateral or paired left/right work counts once. All totals fall if an exercise is omitted; do not replace omitted upper-body work with extra leg sets.",
+  "sources": [
+    {
+      "title": "NHS: Shoulder pain",
+      "url": "https://www.nhs.uk/conditions/shoulder-pain/",
+      "note": "Assessment guidance, avoiding aggravating activity and urgent warning signs. Not an individualized diagnosis."
+    },
+    {
+      "title": "Currier et al., 2023: Resistance-training prescription network meta-analysis",
+      "url": "https://doi.org/10.1136/bjsports-2023-106807",
+      "note": "Resistance training across several prescriptions improved strength and hypertrophy in healthy adults; higher loads favored strength. This does not justify heavy loading of a painful shoulder."
+    },
+    {
+      "title": "Ramos-Campo et al., 2024: Split versus full-body systematic review",
+      "url": "https://doi.org/10.1519/JSC.0000000000004774",
+      "note": "Similar strength and muscle outcomes when volume was equated. Full-body scheduling is a preference and distribution choice, not a superior label."
+    },
+    {
+      "title": "WHO: Physical activity and adult guidelines",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+      "note": "Regular aerobic activity and muscle strengthening support health; a five-minute gym warm-up or occasional cardio is not the complete aerobic recommendation."
+    }
+  ]
+}
